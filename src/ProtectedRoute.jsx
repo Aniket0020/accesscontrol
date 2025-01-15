@@ -1,5 +1,6 @@
 import React from 'react';
-import { useAuth } from './AuthContext';
+import { AuthProvider, useAuth } from './AuthContext';
+
 import { roles } from './Roles';
 
 const ProtectedRoute = ({ allowedActions, children }) => {

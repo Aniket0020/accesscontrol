@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { AuthProvider } from './AuthContext';
-import Login from './Login';
-import Dashboard from './Dashboard';
+import { AuthProvider, useAuth } from './AuthContext';
+
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 import ManageUsers from './ManageUser';
-import EditContent from './editContent';
+import EditContent from './components/EditContent';
+import Logout from './components/Logout';
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
           <Link to="/dashboard">Dashboard</Link>
           <Link to="/manage-users">Manage Users</Link>
           <Link to="/EditContent">EditContent</Link>
+          <Logout /> {/* Add LogoutButton to the navigation */}
         </nav>
         <Routes>
           <Route path="/" element={<Login />} />

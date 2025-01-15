@@ -16,11 +16,14 @@ export const AuthProvider = ({ children }) => {
 
         setUser(newUser);
         localStorage.setItem('user', JSON.stringify(newUser));
+
     };
 
     const logout = () => {
+        console.log('loged out');
         setUser(null);
         localStorage.removeItem('user');
+
     };
 
     return (
